@@ -53,17 +53,29 @@ pip install numpy pandas tensorflow librosa matplotlib
 The repository is structured as follows:
 
 AudioClassifier/
+
 ├── data/
+
 │   ├── class1/
+
 │   ├── class2/
+
 │   └── ...
+
 ├── models/
+
 │   └── saved_model.h5
+
 ├── notebooks/
+
 │   └── AudioClassifier.ipynb
+
 ├── src/
+
    ├── data_preprocessing.py
+   
    ├── model.py
+   
    └── train.py
 
 - data/: Contains the audio dataset.
