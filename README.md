@@ -32,9 +32,11 @@ The goal of this project is to develop a model that can accurately classify audi
 
 3. Classify Capuchin bird calls using the transformed data: A CNN model processes the spectrograms to classify the audio clips.
 
-#### Model Design: 
+#### Data Preparation
 
-Build a neural network model suitable for audio classification.
+- Dependencies: Installation of libraries such as TensorFlow, TensorFlow I/O (for audio processing), and Matplotlib for plotting.
+- Downloading Dataset: The dataset is downloaded from Kaggle using the Kaggle API.
+- File Handling: Instructions for copying Kaggle API credentials and setting directory permissions to access the dataset.
 
 #### Training and Evaluation: 
 
