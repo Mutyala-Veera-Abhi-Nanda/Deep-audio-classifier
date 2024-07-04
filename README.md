@@ -45,8 +45,8 @@ The goal of this project is to develop a model that can accurately classify audi
 
 #### Preprocessing
 
-Downsampling: The audio clips, originally recorded at a high sample rate (44,100 Hz), are downsampled to 16,000 Hz. This reduces the computational load and ensures consistency.
-Reason for Downsampling: Downsampling helps in reducing the size of the audio data, making it easier and faster to process without significant loss of important audio features.
+- Downsampling: The audio clips, originally recorded at a high sample rate (44,100 Hz), are downsampled to 16,000 Hz. This reduces the computational load and ensures consistency.
+- Reason for Downsampling: Downsampling helps in reducing the size of the audio data, making it easier and faster to process without significant loss of important audio features.
 
 #### Audio Loading Function
 
