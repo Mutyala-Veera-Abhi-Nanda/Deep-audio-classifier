@@ -38,102 +38,26 @@ The goal of this project is to develop a model that can accurately classify audi
 - Downloading Dataset: The dataset is downloaded from Kaggle using the Kaggle API.
 - File Handling: Instructions for copying Kaggle API credentials and setting directory permissions to access the dataset.
 
-#### Training and Evaluation: 
+#### Dataset Extraction and Initial Setup
 
-Train the model on the dataset and evaluate its performance.
+- Extraction: The downloaded dataset, usually in a compressed format like zip, is extracted to a specified directory.
+- File Paths: Paths to audio files are set up for easy access during preprocessing and model training. These paths include directories for Capuchin calls, non-Capuchin calls datasets.
 
-#### Inference: 
+#### Preprocessing
 
-Use the trained model to classify new audio samples.
+Downsampling: The audio clips, originally recorded at a high sample rate (44,100 Hz), are downsampled to 16,000 Hz. This reduces the computational load and ensures consistency.
+Reason for Downsampling: Downsampling helps in reducing the size of the audio data, making it easier and faster to process without significant loss of important audio features.
 
-## Dataset:
+#### Audio Loading Function
 
-The dataset used in this project consists of audio files categorized into different classes. This dataset can be downloaded from Dataset Source. Ensure that the dataset is organized into folders for each class.
+- Function Definition: load_wav_16k_mono(filename) is designed to load an audio file and resample it to 16,000 Hz in mono channel format.
+- Resampling: Adjusts the sample rate of the audio.
+- Mono Conversion: Converts stereo audio to mono, which simplifies the data without affecting the detection of bird calls.
 
-## File Structure:
+#### Model Training (Implied Steps)
 
-The repository is structured as follows:
-
-AudioClassifier/
-
-├── data/
-
-│   ├── class1/
-
-│   ├── class2/
-
-│   └── ...
-
-├── models/
-
-│   └── saved_model.h5
-
-├── notebooks/
-
-│   └── AudioClassifier.ipynb
-
-├── src/
-
-   ├── data_preprocessing.py
-   
-   ├── model.py
-   
-   └── train.py
-
-- data/: Contains the audio dataset.
-
-- models/: Directory to save trained models.
-
-- notebooks/: Jupyter notebook for detailed experimentation and visualization.
-
-- src/: Source code for data preprocessing, model building, and training scripts.
-
-- README.md: Project documentation.
-
-## Usage:
-
-#### 1. Clone the Repository
-
-code:
-
-git clone https://github.com/yourusername/AudioClassifier.git
-
-cd AudioClassifier
-
-#### 2. Prepare the Data
-
-Download the dataset and place it in the data/ directory. Ensure the data is organized into subfolders for each class.
-
-#### 3. Run the Notebook
-
-Open the Jupyter notebook located in the notebooks/ directory and run the cells sequentially to preprocess the data, train the model, and evaluate its performance.
-
-## Key Sections in the Notebook
-
-#### Data Loading and Preprocessing:
-
-- Load audio files using librosa.
-
-- Normalize and prepare the data for model training.
-
-#### Model Building:
-
-Define a Convolutional Neural Network (CNN) model for audio classification using TensorFlow.
-
-#### Training:
-
-Train the model using the preprocessed data.
-
-code:
-
-history = model.fit(X_train, y_train, epochs=30, validation_data=(X_test, y_test))
-
-#### Evaluation:
-
-Evaluate the model's performance on the test dataset.
-
-Visualize the results using confusion matrices and accuracy/loss plots.
-
-## Results:
-
-After training the model, you can evaluate its performance using various metrics and visualize the results. The notebook provides detailed visualizations and performance metrics to help understand the model's accuracy and potential improvements.
+- Spectrogram Conversion: Transforming the waveform data into spectrograms is crucial as CNNs excel at processing 2D image-like data. Spectrograms represent the frequency (y-axis) and time (x-axis) with amplitude shown by varying colors.
+- CNN Architecture: Typically involves:
+- Convolutional Layers: To extract features from the spectrograms.
+- Pooling Layers: To reduce dimensionality and highlight important features.
+- Fully Connected Layers: For classification based on the extracted features.
