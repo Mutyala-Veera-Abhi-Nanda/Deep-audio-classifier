@@ -1,14 +1,38 @@
 # Deep Audio Classifier Project
 
-This repository contains a project for classifying audio files using deep learning techniques. The project involves preprocessing audio data, training a model, and evaluating its performance.
+This project is for classifying audio files using deep learning techniques. The project involves preprocessing audio data, training a model, and evaluating its performance.
+
+## Requirements:
+
+- Python 3.x
+
+- numpy
+
+- pandas
+
+- tensorflow
+
+- librosa
+
+- matplotlib
 
 ## Project Overview:
 
 The goal of this project is to develop a model that can accurately classify audio files into predefined categories. This involves several steps:
 
-#### Data Collection and Preprocessing: 
+#### Algorithm Description
 
-Load and preprocess audio files to extract meaningful features.
+- Dataset: The dataset includes various audio clips labeled as Capuchin bird calls, non-Capuchin bird calls, and other forest sounds. The data come from a well-
+
+defined source Kaggle competition dataset.
+
+- Steps:
+
+1. Convert audio data to waveforms: Audio data is read and converted into a format (waveform) that can be processed.
+
+2. Transform waveforms into spectrograms: Spectrograms provide a visual representation of the audio signal's frequency spectrum over time.
+
+3. Classify Capuchin bird calls using the transformed data: A CNN model processes the spectrograms to classify the audio clips.
 
 #### Model Design: 
 
@@ -25,28 +49,6 @@ Use the trained model to classify new audio samples.
 ## Dataset:
 
 The dataset used in this project consists of audio files categorized into different classes. This dataset can be downloaded from Dataset Source. Ensure that the dataset is organized into folders for each class.
-
-## Requirements:
-
-To run this project, you'll need the following libraries:
-
-- Python 3.x
-
-- numpy
-
-- pandas
-
-- tensorflow
-
-- librosa
-
-- matplotlib
-
-You can install these libraries using pip:
-
-code:
-
-pip install numpy pandas tensorflow librosa matplotlib
 
 ## File Structure:
 
