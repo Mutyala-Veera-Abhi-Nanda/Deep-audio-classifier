@@ -22,9 +22,7 @@ The goal of this project is to develop a model that can accurately classify audi
 
 #### Algorithm Description
 
-- Dataset: The dataset includes various audio clips labeled as Capuchin bird calls, non-Capuchin bird calls, and other forest sounds. The data come from a well-
-
-defined source Kaggle competition dataset.
+- Dataset: The dataset includes various audio clips labeled as Capuchin bird calls, non-Capuchin bird calls, and other forest sounds. The data come from a well-defined source Kaggle competition dataset.
 
 - Steps:
 
